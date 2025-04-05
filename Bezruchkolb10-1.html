@@ -1,0 +1,91 @@
+<!Doctype html>
+<Title> Example </title>
+<Style>
+body {
+display: grid;
+grid-template-areas:
+"header header header as"
+"nav article ads as"
+"footer footer ads as"
+"ad ad ad ad";
+grid-template-rows: 200px 1fr 200px 70px;
+grid-template-columns: 20% 1fr 40% 1fr;
+grid-row-gap: 3px;
+grid-column-gap: 3px;
+height: 100vh;
+margin: 0 ;
+}
+/* Stack the layout on small devices / viewports. */
+@media all and ( max-width: 500px) {  
+body {
+grid-template-areas:
+"header"
+"article"
+"ads"
+"nav"
+"footer"
+"as"
+"ad";
+grid-template-rows: 80px 1fr 70px 1fr 70px 1fr 50px;
+grid-template-columns: 1fr;
+}
+}
+#pageHeader {background-color: gold;
+grid-area: header;
+}
+#pageFooter {background-color: aqua;
+grid-area: footer;
+}
+#mainArticle {background-color: blue;
+grid-area: article;
+}
+#mainNav {background-color: brown;
+grid-area: nav;
+}
+#siteAds {background-color: blueviolet;
+grid-area: ads;
+}
+#as {background-color:red;
+grid-area:as;}
+#ad {background-color:black;
+grid-area:ad;}
+@media all and ( max-width: 750px) and (min-width:501px) {  
+body {
+grid-template-areas:
+"header article"
+"ads nav"
+"footer as"
+"ad";
+grid-template-rows: 80px 1fr 70px 1fr;
+grid-template-columns: 1fr 1fr;
+}
+}
+#pageHeader {background-color: gold;
+grid-area: header;
+}
+#pageFooter {background-color: aqua;
+grid-area: footer;
+}
+#mainArticle {background-color: blue;
+grid-area: article;
+}
+#mainNav {background-color: brown;
+grid-area: nav;
+}
+#siteAds {background-color: blueviolet;
+grid-area: ads;
+}
+#as {background-color:red;
+grid-area:as;}
+#ad {background-color:black;
+grid-area:ad;}
+</Style>
+<Body>
+<Header id = "pageHeader"></header>
+<Article id = "mainArticle"></article>
+<Nav id = "mainNav"></nav>
+<Div id = "siteAds"></div>
+<Footer id = "pageFooter"> </footer>
+<as id="as"></as>
+<ad id="ad"></ad>
+</Body>
