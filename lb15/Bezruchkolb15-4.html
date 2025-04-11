@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Визначення пори року</title>
+</head>
+<body>
+  <script>
+    const month = parseInt(prompt("Введіть номер місяця (від 1 до 12):"), 10);
+
+    let season = "";
+    let monthName = "";
+
+    switch (month) {
+      case 12:
+      case 1:
+      case 2:
+        season = "зима";
+        break;
+      case 3:
+      case 4:
+      case 5:
+        season = "весна";
+        break;
+      case 6:
+      case 7:
+      case 8:
+        season = "літо";
+        break;
+      case 9:
+      case 10:
+      case 11:
+        season = "осінь";
+        break;
+      default:
+        alert("Введено некоректне число. Введіть значення від 1 до 12.");
+        throw new Error("Некоректне значення місяця");
+    }
+
+    const months = [
+      "січень", "лютий", "березень", "квітень", "травень", "червень",
+      "липень", "серпень", "вересень", "жовтень", "листопад", "грудень"
+    ];
+
+    monthName = months[month - 1];
+
+    alert(`Місяць: ${monthName}, Пора року: ${season}`);
+  </script>
+</body>
+</html>
